@@ -1,0 +1,5 @@
+Koti paid 600 pesos to Ram
+Ram paid 100 pesos to Hari
+Hari paid 400 pesos to Lakshmi
+Lakshmi paid 300 pesos to Koti
+Koti recieved 600 from prem
