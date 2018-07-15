@@ -1,0 +1,23 @@
+<!-- Image and text -->
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+      ​<picture>
+        <img src="../assets/newLogo.PNG" class="img-fluid img-thumbnail" alt="..." style="height: 30px;">
+      </picture>
+    Hash Generator - SHA 256 by <i>DKRM</i>
+  </a>
+</nav>
+<br/>
+<div class="form-group container-fluid">
+  <label for="comment">Enter your text:</label>
+  <textarea class="form-control" rows="2" id="comment" (input)="onSearchChange($event.target.value)">{{text}}</textarea>
+</div>
+<div class="input-group mb-3 container-fluid">
+  <div class="input-group-prepend">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon1">Hash code - SHA256</button>
+  </div>
+  <p class="form-control" style="overflow: auto;" id="output">{{output}}</p>
+</div>
+<div class="col-sm-12 text-center">
+  <img src="../assets/newLogo.PNG" alt="My Logo" class="img-responsive" />
+</div>
