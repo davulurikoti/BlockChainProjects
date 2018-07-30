@@ -2,7 +2,7 @@ const crypto = require('crypto');
 
 var BlockChain = [];
 var transactionPool = [];
-var previousHash = generateHash('GenesisHash');
+var previousHash = generateBlockHash('GenesisHash');
 
 var genesisBlock = new Block(0, 0, previousHash);
 BlockChain.push(genesisBlock);//Genesis Block
@@ -16,7 +16,7 @@ addTransaction('Koti receives 700 dollars from Rahul');
 
 var merkletreeHash = createMerkletree(0,5);
 var block1 = new Block(previousHash, transactionPool.slice(0,6), merkletreeHash[0]);
-previousHash = merkletreeHash[0];
+
 BlockChain.push(block1);
 
 addTransaction('Koti Sends 300 dollars to Varun');
@@ -28,7 +28,7 @@ addTransaction('Koti receives 800 dollars from Rahul');
 
 merkletreeHash = createMerkletree(6,11);
 var block2 = new Block(previousHash, transactionPool.slice(6,11), merkletreeHash[0]);
-previousHash = merkletreeHash[0];
+
 
 BlockChain.push(block2);
 
@@ -53,6 +53,7 @@ function Block(lastBlockhash, transactions, merkletree){
     this.time = new Date().getTime();
     HashNoncevar = generateBlockHash(this.transactions+this.merkletree+this.time);
     this.blockHash = HashNoncevar.hash;
+    previousHash = HashNoncevar.hash;
     this.nonce = HashNoncevar.nonce;
 }
 /**
