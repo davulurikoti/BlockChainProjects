@@ -98,7 +98,9 @@ function generateHash(transaction){
 }
 /**
 This function generates the block hash with nonce.
-Here consensus is to have 0000 as prefix for hash.
+
+C
+Here consensus is to have 0000 as prefix for hashkl
 **/
 function generateBlockHash(transaction){
     var proof = 0;
